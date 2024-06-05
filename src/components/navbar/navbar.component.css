@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  color: white;
+  background-color: var(--bs-light-blue);
+  border-color: var(--bs-light-blue);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  background-color: var(--bs-light-blue);
+  border-color: var(--bs-light-blue);
+}
+
+.text-secondary {
+  color: var(--bs-light-blue) !important;
+}
+
+.font-oswald {
+  font-family: "PT Sans", sans-serif;
+}
+
+.nav-link {
+  cursor: pointer;
+}
