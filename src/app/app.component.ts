@@ -11,5 +11,5 @@ import { LandingPageComponent } from '../components/landing-page/landing-page.co
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'RapidoUI';
+  title = 'Rapido';
 }

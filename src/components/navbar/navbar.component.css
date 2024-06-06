@@ -12,14 +12,6 @@
   border-color: var(--bs-light-blue);
 }
 
-.text-secondary {
-  color: var(--bs-light-blue) !important;
-}
-
-.font-oswald {
-  font-family: "PT Sans", sans-serif;
-}
-
 .nav-link {
   cursor: pointer;
 }

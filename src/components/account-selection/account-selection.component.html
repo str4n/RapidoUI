@@ -1,0 +1,40 @@
+<section class="py-5">
+    <div class="container px-5">
+        <div class="rounded-4 py-5 px-4 px-md-5">
+            <div class="text-center mb-5">
+                <p class="lead fw-normal text-muted mb-0">sign up for rapido</p>
+                <h1 class="font-arimo fw-bolder text-xxl-center fs-1 mt-3"><span class="text-primary">The rapid way to
+                        pay </span><br><span class="text-secondary">and get paid</span></h1>
+            </div>
+
+            <div class="row bg-white shadow-lg border selection">
+                <div class="col-sm-6">
+                    <div class="card border-0 p-5">
+                        <div class="card-body d-flex align-items-center">
+                            <input class="form-check-input my-3" type="radio" name="account-selection" id="individual" (click)="selectIndividual()">
+                            <label class="display-1 font-arimo text-primary mx-3" for="individual">Individual</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="display-6 fw-medium fs-6 mx-3 mt-0">Spend and manage your money, all from one app.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card border-0 p-5">
+                        <div class="card-body d-flex align-items-center justify-content-end">
+                            <input class="form-check-input my-3" type="radio" name="account-selection" id="corporate" (click)="selectCorporate()">
+                            <label class="display-1 font-arimo text-primary mx-3" for="corporate">Corporate</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <p class="display-6 fw-medium fs-6 mt-0" style="margin-left: 80px;">Accept payments, manage donations, and take control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5 d-flex justify-content-center">
+                    <button class="btn btn-primary btn-lg mt-5 fw-bolder rounded-pill" [disabled]="!selectedAccountType" (click)="navigateToSignUp()">Get started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

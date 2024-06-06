@@ -1,0 +1,23 @@
+h1 {
+    font-size: 72px !important;
+    font-weight: bolder !important;
+}
+
+label {
+    font-size: 58px !important;
+    font-weight: bolder !important;
+}
+
+input[type=radio] {
+    width: 50px;
+    height: 50px;
+}
+
+input[type=radio]:checked {
+    background-color: #0070E0;
+    border-color: #0070E0;
+}
+
+.selection {
+    border-radius: 25px;
+}
