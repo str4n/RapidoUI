@@ -1,10 +1,10 @@
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover {
     color: white;
     background-color: var(--bs-light-blue);
     border-color: var(--bs-light-blue);
   }
   
-  .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  .btn-outline-primary:hover {
     background-color: var(--bs-light-blue);
     border-color: var(--bs-light-blue);
   }

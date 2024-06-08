@@ -21,3 +21,14 @@ input[type=radio]:checked {
 .selection {
     border-radius: 25px;
 }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: white;
+    background-color: var(--bs-light-blue);
+    border-color: var(--bs-light-blue);
+  }
+  
+  .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    background-color: var(--bs-light-blue);
+    border-color: var(--bs-light-blue);
+  }
