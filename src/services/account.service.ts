@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SignUpCommand } from '../models/signUpCommand';
+import { ErrorResponse } from '../models/errorResponse';
 
 const httpOptions = {
   headers: new HttpHeaders(
@@ -18,9 +19,8 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  signUpIndividual(model:any) {
+  signUpIndividual(model: SignUpCommand) {
     model.accountType = "Individual";
-    console.log(model);
-    return this.http.post<SignUpCommand>(this.baseUrl + "/sign-up", model, { headers: httpOptions.headers })
+    return this.http.post<any>(this.baseUrl + "/sign-up", model, { headers: httpOptions.headers })
   }
 }

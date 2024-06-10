@@ -1,8 +1,7 @@
 <div class="container px-5">
 
     <div class="mt-5 pt-3">
-        <h1 class="font-arimo fw-bolder text-xxl-center fs-1 mb-5"><span class="text-primary">Sign up for <span class="text-gradient">Rapido</span></span>
-        </h1>
+        <h1 class="font-arimo fw-bolder text-xxl-center fs-1 mb-5"><span class="text-primary">Sign up for <span class="text-gradient">Rapido</span></span></h1>
     </div>
 
     <div class="d-flex justify-content-evenly align-content-center">
@@ -21,11 +20,11 @@
                                                     || signUpForm.controls['email'].dirty
                                                     || this.submitted)">
                                 <span *ngIf="signUpForm.controls['email'].errors?.['required']">
-                                    *Email is required.
+                                    Email is required.
                                 </span>
 
                                 <span *ngIf="signUpForm.controls['email'].errors?.['email']">
-                                    *Email is invalid.
+                                    Email is invalid.
                                 </span>
                             </div>
                         </div>
@@ -45,11 +44,11 @@
                                                     || signUpForm.controls['password'].dirty 
                                                     || this.submitted)">
                                 <span *ngIf="signUpForm.controls['password'].errors?.['required']">
-                                    *Password is required.
+                                    Password is required.
                                 </span>
 
                                 <span *ngIf="signUpForm.controls['password'].errors?.['pattern']">
-                                    *Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
+                                    Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
                                 </span>
                             </div>
                         </div>
@@ -69,13 +68,19 @@
                                                     || signUpForm.controls['repeatPassword'].dirty
                                                     || this.submitted)">
                                 <span *ngIf="signUpForm.controls['repeatPassword'].errors?.['required']">
-                                    *Repeat password.
+                                    Repeat password.
                                 </span>
                             </div>
 
                             <div class="text-danger mt-1" *ngIf="!signUpForm.controls['repeatPassword'].errors?.['required']">
                                 <span *ngIf="signUpForm.errors?.['passwordNotMatch']">
-                                    *Password must match.
+                                    Password must match.
+                                </span>
+                            </div>
+
+                            <div class="text-danger mt-1" *ngIf="!this.succeded && this.submitted">
+                                <span>
+                                    {{errorMessage}}
                                 </span>
                             </div>
                         </div>
