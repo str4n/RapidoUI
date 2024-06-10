@@ -18,7 +18,9 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(model:any) {
+  signUpIndividual(model:any) {
+    model.accountType = "Individual";
+    console.log(model);
     return this.http.post<SignUpCommand>(this.baseUrl + "/sign-up", model, { headers: httpOptions.headers })
   }
 }

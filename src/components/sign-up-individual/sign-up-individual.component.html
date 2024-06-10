@@ -9,39 +9,75 @@
         <div class="sign-up-form bg-white rounded-5 py-5 w-50 shadow-lg">
             <div class="row gx-2 justify-content-center">
                 <div class="col-lg-8">
-                    <form id="signUpForm" (ngSubmit)="onSubmit()">
-                        <div class="form-floating mb-4 mt-2">
-                            <input class="form-control" 
-                            id="email" 
-                            type="email" 
-                            placeholder="name@example.com" 
-                            name="email" 
-                            [(ngModel)]="signUpForm.value.email" required/>
-
+                    <form id="signUpForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                        <div class="form-floating mb-3 mt-2">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" name="email"
+                                formControlName="email"/>
+                        
                             <label for="email">Email address</label>
+                        
+                            <div class="text-danger mt-1" *ngIf="signUpForm.controls['email'].invalid 
+                                                    && (signUpForm.controls['email'].touched 
+                                                    || signUpForm.controls['email'].dirty
+                                                    || this.submitted)">
+                                <span *ngIf="signUpForm.controls['email'].errors?.['required']">
+                                    *Email is required.
+                                </span>
+
+                                <span *ngIf="signUpForm.controls['email'].errors?.['email']">
+                                    *Email is invalid.
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="form-floating mb-4">
+                        <div class="form-floating mb-3">
                             <input class="form-control" 
                             id="password" 
                             type="password" 
                             placeholder="password" 
                             name="password" 
-                            [(ngModel)]="signUpForm.value.password" required/>
+                            formControlName="password"/>
 
                             <label for="password">Password</label>
+                            
+                            <div class="text-danger mt-1" *ngIf="signUpForm.controls['password'].invalid 
+                                                    && (signUpForm.controls['password'].touched 
+                                                    || signUpForm.controls['password'].dirty 
+                                                    || this.submitted)">
+                                <span *ngIf="signUpForm.controls['password'].errors?.['required']">
+                                    *Password is required.
+                                </span>
 
+                                <span *ngIf="signUpForm.controls['password'].errors?.['pattern']">
+                                    *Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="form-floating mb-4">
+                        <div class="form-floating mb-3">
                             <input class="form-control" 
                             id="repeatPassword" 
                             type="password" 
                             placeholder="repeatPassword" 
                             name="repeatPassword" 
-                            [(ngModel)]="signUpForm.value.repeatPassword" required/>
+                            formControlName="repeatPassword"/>
 
                             <label for="password">Repeat password</label>   
+
+                            <div class="text-danger mt-1" *ngIf="signUpForm.controls['repeatPassword'].invalid 
+                                                    && (signUpForm.controls['repeatPassword'].touched 
+                                                    || signUpForm.controls['repeatPassword'].dirty
+                                                    || this.submitted)">
+                                <span *ngIf="signUpForm.controls['repeatPassword'].errors?.['required']">
+                                    *Repeat password.
+                                </span>
+                            </div>
+
+                            <div class="text-danger mt-1" *ngIf="!signUpForm.controls['repeatPassword'].errors?.['required']">
+                                <span *ngIf="signUpForm.errors?.['passwordNotMatch']">
+                                    *Password must match.
+                                </span>
+                            </div>
                         </div>
 
                         <div class="d-grid mb-1 d-flex justify-content-center">
