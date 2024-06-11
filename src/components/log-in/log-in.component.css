@@ -8,3 +8,7 @@
   background-color: var(--bs-light-blue);
   border-color: var(--bs-light-blue);
 }
+
+#pass-reset:hover {
+  cursor: pointer;
+}

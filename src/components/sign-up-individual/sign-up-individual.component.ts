@@ -34,13 +34,12 @@ export class SignUpIndividualComponent {
 
     if (valid && this.submitted)
     {
-      let model:SignUpCommand = {email: this.signUpForm.value.email, password: this.signUpForm.value.password, accountType: ''};
+      const model:SignUpCommand = {email: this.signUpForm.value.email, password: this.signUpForm.value.password, accountType: ''};
       this.accountService.signUpIndividual(model).subscribe({next: response => {
         this.succeded = true;
         this.router.navigate(['/log-in'])
       }, error: err => {
         this.errorMessage = err.error.error.reason;
-        console.log(err.error.error);
       }});
     }
   }
