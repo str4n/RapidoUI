@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { LandingPageComponent } from '../components/landing-page/landing-page.component';
 import { AccountService } from '../services/account.service';
@@ -32,4 +32,5 @@ export class AppComponent implements OnInit {
     const userInfo: UserAuthInfo = JSON.parse(userInfoString);
     this.accountService.setCurrentUserInfo(userInfo);
   }
+
 }

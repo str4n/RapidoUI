@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #000b4b;
+    border: #000b4b;
+}
+
+.btn-primary:active {
+    background-color: #000e5c;
+    border: #000e5c;
+}
+
+a {
+    cursor: pointer;
+}

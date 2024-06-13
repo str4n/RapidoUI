@@ -4,11 +4,12 @@ import { AccountService } from '../../services/account.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LogInCommand } from '../../models/loginCommand';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-log-in',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './log-in.component.html',
   styleUrl: './log-in.component.css'
 })
@@ -33,7 +34,7 @@ export class LogInComponent {
       const model:LogInCommand = {email: this.logInForm.value.email, password: this.logInForm.value.password,} 
       this.accountService.logIn(model).subscribe({next: response => {
         this.succeded = true;
-        this.router.navigate(['/my-account'])
+        this.router.navigate(['/my-account/summary'])
       }, error: err => {
         this.errorMessage = err.error.error.reason;
       }});

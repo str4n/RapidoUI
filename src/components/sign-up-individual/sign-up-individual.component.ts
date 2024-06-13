@@ -5,11 +5,12 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { SignUpCommand } from '../../models/signUpCommand';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-sign-up-individual',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './sign-up-individual.component.html',
   styleUrl: './sign-up-individual.component.css'
 })

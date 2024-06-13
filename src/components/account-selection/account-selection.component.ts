@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-account-selection',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent],
   templateUrl: './account-selection.component.html',
   styleUrl: './account-selection.component.css'
 })
